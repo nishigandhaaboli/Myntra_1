@@ -1,0 +1,63 @@
+#body{
+    width: 30%;
+    margin: auto;
+    height: 600px;
+    margin-top: 100px;
+    /* border: rgb(154, 152, 152); */
+    border-style:outset;
+    background-color: gainsboro;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#body>input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    width: 300px;
+    height: 40px;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid rgb(235, 168, 168);
+}
+#body>button{
+    margin-top: 30px;
+    width: 250px;
+    height: 40px;
+    margin-left: 100px;
+    border: none;
+    background-color: rgb(54, 54, 175);
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    font-family:'Courier New', Courier, monospace;
+    margin-bottom: 30px;
+}
+#body>button{
+    margin-top: 20px;
+    width: 250px;
+    height: 40px;
+    margin-left: 100px;
+    border: none;
+    background-color: rgb(54, 54, 175);
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    font-family:'Courier New', Courier, monospace;
+    margin-bottom: 30px;
+}
+#body>h1{
+    margin-top: 30px;
+    margin-left: 150px;
+    font-size: 20px;
+    font-weight: 700;
+}
+#body>a{
+    font-size: 15px;
+    font-weight: 600;
+    padding-bottom: 50px;
+    margin-left: 150px;
+}
+

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1e26d3ee93.js" crossorigin="anonymous"></script>
+    <title>Add To Cart</title>
+    <style>
+        #screen{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #navbar{
+            width: 100%;
+            height: 100px;
+        }
+        #mainDiv{
+            margin-top: 80px;
+            display: flex;
+            width: 65%;
+            margin: auto;
+        }
+        #mainDiv>div:nth-child(1){
+            width: 70%;
+        }
+        #mainDiv>div:nth-child(2){
+            width: 35%;
+        }
+        #navbar>div{
+            display: flex;
+            border: 1px solid grey;
+            width: 100%;
+            height: 80px;
+            justify-content: space-between;
+        }
+        #navbar>div>div:nth-child(1)>img{
+            margin-top: 20px;
+            width: 50px;
+            height: 35px;
+            margin-left: 50px;
+        }
+        #navbar>div>div:nth-child(2)>p{
+            margin-top: 30px;
+            color: rgb(77, 66, 66);
+            font-size: 15px;
+            font-weight: 500;
+        }
+        #navbar>div>div:nth-child(3){
+            display: flex;
+        }
+        #navbar>div>div:nth-child(3)>p{
+            margin-right: 60px;
+            color: rgb(77, 66, 66);
+            font-size: 18px;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+        #navbar>div>div:nth-child(3)>img{
+            height: 35%;
+            width: 14%;
+            margin-top: 25px;
+            margin-right: 5px;
+
+        }
+        #box1{
+            width: 97%;
+            height: 70px;
+            border: 1px solid rgb(231, 225, 225);
+            margin-top: 20px; 
+            display: flex;
+            flex-direction: row;
+            border-radius: 5px;
+        }
+       
+        #box1>div:nth-child(1)>p{
+            /* padding-top: 20px; */
+            margin-left: 30px;
+            font-size: 15px;
+            font-weight: 300px;
+        }
+        #box1>div:nth-child(2)>button{
+            margin-left: 260px;
+            width: 120px;
+            height: 30px;
+            margin-top: 10px;
+            border: 1px solid #ff3f6c;
+            border-radius: 3px;
+            color: #ff3f6c;
+            font-size: 10px;
+            font-weight: 600;
+            background-color: white;
+        }
+        #box1>div:nth-child(2)>button:hover{
+            background-color: paleturquoise;
+        }
+        #box2>div:nth-{
+            border:1px solid grey
+        }
+        #box1>div:nth-child(2)>p{
+            color:#ff3f6c
+
+        }
+        #right>div:nth-child(1){
+            margin-top: 0px;
+            border: 1px solid rgb(231, 225, 225);
+            border-radius: 5px;
+            height: 150px;
+        } 
+        #right>div:nth-child(1)>h5{
+            color: rgb(75, 70, 70);
+            margin-left: 10px;
+
+        }
+        #right>div:nth-child(1)>span{
+            color: rgb(75, 70, 70);
+            margin-left: 10px;
+            font-size: 15px;
+            font-weight: 600px;
+        }
+        #right>div:nth-child(1)>i{
+            margin-left: 10px;
+        }
+        #right>div:nth-child(1)>button{
+            margin-left: 255px;
+            border: 1px solid #ff3f6c;
+            border-radius: 3px;
+            color: #ff3f6c;
+            font-size: 10px;
+            width: 60px;
+            height: 30px;
+            font-weight: 600;
+            background-color: white;
+            margin-bottom: 10px;
+        }
+        #right>div:nth-child(1)>button:hover{
+           background-color: paleturquoise;
+;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var isUserLoggedIn = JSON.parse(localStorage.getItem("isUserLoggedIn"));
+            console.log(isUserLoggedIn);
+            if(isUserLoggedIn == true)
+            {
+                alert("Welcome To Home.........");
+                const allProducts = JSON.parse(localStorage.getItem("allProducts"));
+
+                var leftCart = document.getElementById("leftCart");
+                var totalProductsPrice = document.createElement("span");
+                var totalAmount = 0;
+                var totalAmt = document.getElementById("totalAmt");
+                for(var i=0; i<allProducts.length; i++)
+                {
+                    console.log(allProducts[i],"allProducts");
+                    const innerDiv = document.createElement("div");
+                    innerDiv.style.display = "flex";
+                    innerDiv.style.marginTop ="20px";
+                    innerDiv.style.marginLeft ="20px";
+
+                    const leftDiv = document.createElement("div");
+                    var img = document.createElement("img");
+                    img.src = allProducts[i].pI;
+                    leftDiv.style.borderColor = "grey";
+
+                    img.style.width = "150px";
+                    img.style.height = "150px"
+
+                    leftDiv.append(img);
+
+                    var rightDiv = document.createElement("div")
+                    rightDiv.style.marginLeft ="20px";
+                    rightDiv.style.borderColor = "1px solid grey";
+
+                    var name = document.createElement("h4");
+                    name.innerText = allProducts[i].pN;
+                    rightDiv.append(name);
+
+                    var price = document.createElement("p");
+                    price.innerText = allProducts[i].pP;
+                    totalAmount = totalAmount + Number(allProducts[i].pP);
+                    console.log(totalAmount)
+                    rightDiv.append(price);
+                    innerDiv.append(leftDiv);
+                    innerDiv.append(rightDiv);
+                    leftCart.append(innerDiv);
+                }
+                totalProductsPrice.append(totalAmount);
+                totalAmt.append(totalProductsPrice);
+
+            }
+            else{
+                    alert("Login First...");
+                    document.location.href = './Login.html'
+                }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="screen">
+        <div id="navbar">
+            <div>
+                <div>
+                    <img src="./myntra.jpg",alt="myntra"/>
+                </div>
+                <div><p>BAG  ----------  ADDRESS  -------- PAYMENT</p></div>
+                <div>
+                    <img src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png", alt="img"/>
+                    <p>100%    secure</p>
+                </div>
+            </div>
+        </div>
+       
+        <div id="mainDiv">
+            <div id="leftCart">
+                <div id="box1">
+                    <div>
+                        <p>check Delivery time & services</p>  
+                    </div>
+                    <div>
+                        <button>ENTER PIN CODE</button>
+                    </div>
+                </div>
+                <div>
+                    <h5>AVAILABE OFFERS</h5>
+                    <P>15% Discount on One Card Credit Cards on a min spent of rs. 2000</P>
+                    <input type="select" placeholder="Show More"/>
+                </div>
+                <div></div>
+                <div>
+                </div>
+            </div>
+            <div id="right">
+                <div>
+                    <h5>CUPONS</h5>
+                    <i class="fa-solid fa-tag"></i>
+                    <span>Apply Coupons</span>
+                    <button>APPLY</button><br>
+                    <span>Login to get up to Rs 300 OFF on first order</span>
+                </div>
+                <div>
+                    <h4>PRICE DETAILS</h4>
+                    <button>PLACE ORDER</button>
+                </div>
+                <div id="totalAmt" style="margin-top: 20px">
+                    <span style="margin-right: 30px;">TOTAL PRICE</span>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./server.js"></script>
+</body>
+
+</html>

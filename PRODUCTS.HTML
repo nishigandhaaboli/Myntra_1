@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1e26d3ee93.js" crossorigin="anonymous"></script>
+    <title>Products</title>
+    <style>
+        #screen {
+            width: 100%;
+            margin: 0;
+        }
+        #navbar {
+            width: 100%;
+        }
+
+        #navbar>div {
+            height: 90px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #navbar>div>div:nth-child(2) {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #navbar>div>div:nth-child(1) {
+            width: 200px;
+        }
+
+        #navbar>div>div:nth-child(2) {
+            width: 700px;
+        }
+
+        #navbar>div>div:nth-child(3) {
+            width: 550px;
+        }
+
+        #navbar>div>div:nth-child(4) {
+            width: 280px;
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            justify-content: space-around;
+        }
+
+        #navbar>div>div:nth-child(4)>div {
+            display: flex;
+            width: 10%;
+            justify-content: space-around;
+        }
+
+        #navbar>div>div:nth-child(4)>div>button {
+            display: flex;
+            margin-top: -7px;
+            flex-direction: column;
+            height: 50px;
+            width: 55px;
+            margin-left: 30px;
+            margin-right: 20px;
+            border: none;
+            background-color: white;
+            justify-content: space-evenly;
+        }
+
+        #navbar>div>div:nth-child(3)>input {
+            width: 500px;
+            margin-top: 20px;
+            height: 40px;
+            background-color: #f5f5f6;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* #navbar>div>div:nth-child(3)>i{
+            margin-top: 32px;
+        } */
+        #navbar>div>div:nth-child(2)>a {
+            display: flex;
+            width: 30%;
+            margin-top: 35px;
+            justify-content: space-around;
+            color: #282c3f;
+            border-bottom: none;
+            text-decoration: none;
+            text-align: center;
+            word-spacing: 1;
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 0px;
+        }
+
+        #navbar>div>div:nth-child(2)>h6 {
+            color: rgb(248, 30, 102);
+            margin-top: 32px;
+            margin-right: 35px;
+        }
+
+        #navbar>div>div>img {
+            height: 40px;
+            margin-top: 30px;
+            margin-left: 50px;
+        }
+        #screen>div:nth-child(2) {
+            display: flex;
+            flex-direction: row;
+        }
+        #leftnavbar {
+            border: 1px solid gray;
+            width: 16%;
+        }
+        #rightProducts {
+            width: 84%;
+        }
+        #rightProducts>div {
+            display: flex;
+            width: 100%;
+            height: 350px;
+        }
+        #rightProducts>div>div {
+            width: 17%;
+            margin: auto;
+            height: 320px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #rightProducts>div>div>img {
+            width: 100%;
+            margin: auto;
+            height: 250px;
+        }
+        #rightProducts>div>div>img:hover {
+            scale: 1.2;
+        }
+        #rightProducts>div>div>div {
+            width: 85%;
+            margin: auto;
+            height: 60px;
+        }
+        #rightProducts>div>div>div>p {
+            margin-top: -1px;
+            margin-bottom: 1px;
+            font-size: 12px;
+        }
+        #rightProducts>div>div>div>button {
+            width: 150px;
+            height: 25px;
+            background-color: rgb(227, 21, 90);
+            border: 1px solid purple;
+            color: white;
+            font-size: 15px;border-radius: 5px;
+        }
+        #rightProducts>div>div>div>button:hover {
+            scale: 0.9;
+        }
+        #rightProducts>div>div>div>button>a {
+            text-decoration: none;
+            color: black;
+        }
+        #leftnavbar>div {
+            display: flex;
+            border: 1px solid grey;
+        }
+        #leftnavbar>div>div {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-left: 10px;
+            margin-bottom: 15px;
+        }
+        #leftnavbar>div:nth-child(3) {
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+        }
+        #leftnavbar>div:nth-child(3)>h4 {
+            font-size: 15px;
+            margin-left: 20px;
+        }
+
+        #leftnavbar>div:nth-child(3)>p {
+            margin-top: 1px;
+            margin-bottom: 22px;
+            margin-left: 20px;
+        }
+        #leftnavbar>div:nth-child(4) {
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+        }
+        #leftnavbar>div:nth-child(4)>h4 {
+            font-size: 15px;
+            margin-left: 20px;
+        }
+        #leftnavbar>div:nth-child(4)>p {
+            margin-top: 1px;
+            margin-bottom: 22px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <div>
+            <div>
+                <img src="./myntra.jpg" , alt="mayntra logo" />
+            </div>
+            <div>
+                <a href="./PRODUCTS.HTML">MEN</a>
+                <a href="">WOMEN</a>
+                <a href="">KIDS</a>
+                <a href="">HOME&LIVING</a>
+                <a href="">BEAUTY</a>
+                <a href="">STUDIO</a>
+                <h6>NEW</h6>
+            </div>
+            <div>
+                <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                <input type="text" placeholder="Search for pruducts, brands and more">
+            </div>
+            <div>
+                <div>
+                    <button><i class="fa-solid fa-user fa-xl"></i>Profile</button>
+                </div>
+                <div>
+                    <button><i class="fa-solid fa-heart fa-xl"></i>Wishlist</button>
+                </div>
+                <div>
+                    <button ><i class="fa-solid fa-bag-shopping fa-xl"></i><a href="./Cart.html">Bag</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="screen">
+        <div>
+            <p>Home / Footwear/ Mfb Brand</p>
+            <p>Mfb Brand- 2345 items</p>
+        </div>
+        <div>
+            <div id="leftnavbar">
+                <p>FILTERS</p>
+                <div>
+                    <div>
+                        <input type="radio" />
+                        <input type="radio" />
+                        <input type="radio" />
+                        <input type="radio" />
+                    </div>
+                    <div>
+                        <label>Men</label>
+                        <label>Women</label>
+                        <label>Boys</label>
+                        <label>Girls</label>
+                    </div>
+                </div>
+                <div>
+                    <h4>CATEGORIES</h4>
+                    <p><input type="checkbox" />Casual Shoes</p>
+                    <p><input type="checkbox" />SportsShoes</p>
+                    <p><input type="checkbox" />FormalShoes</p>
+                    <p><input type="checkbox" />Boots</p>
+                    <p><input type="checkbox" />Flates</p>
+                    <p><input type="checkbox" />Heels</p>
+                </div>
+                <div>
+                    <h4>BRANDS</h4>
+                    <p><input type="checkbox" /> Puma(1603)</p>
+                    <p><input type="checkbox" />FAUSTO(1319)s</p>
+                    <p><input type="checkbox" />San Frissco(713)</p>
+                    <p><input type="checkbox" />Campus(1062)</p>
+                    <p><input type="checkbox" />U.S. Polo Assn.(658)</p>
+                    <p><input type="checkbox" />Red Chief(606)s</p>
+                    <p><input type="checkbox" />Heels</p>
+                    <p><input type="checkbox" />Heels</p>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="rightProducts">
+                <div>
+                    <div id="forOneOne">
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17425548/2022/9/8/77ef6940-a1a1-40af-bf58-e92bc349b8d11662633779415RoadsterMenBlackSneakers1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Star</p>
+                            <p>Means Shoes</p>
+                            <p>872</p>
+                            <button onclick="addToCart(forOneOne)">Add To Cart</button>
+                        </div>
+                    </div>
+                    <div id="forOneTwo">
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19217384/2022/7/22/5d586145-5e6a-44d6-9292-a662173051dc1658470302498SportsShoes1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Addidas</p>
+                            <p>Means Shoes</p>
+                            <p>2000</p>
+                            <button onclick="addToCart(forOneTwo)">Add To Cart</button>
+                        </div>
+                    </div>
+                    <div id="forOneThree">
+                        <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17097806/2022/2/10/aa9f5212-f2eb-4531-b836-1df0c3d3fe2d1644484313283MastHarbourMenWhiteStripedSneakers1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Nike</p>
+                            <p>Means Shoes</p>
+                            <p>4832</p>
+                            <button onclick="addToCart(forOneThree)">Add To Cart</button>
+                        </div>
+                    </div>
+                    <div id="forOneFour">
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20153028/2022/9/24/04a91674-aef0-44e8-92d0-a6554ab61c211664010042023RedTapeMenWhiteMeshWalkingNon-MarkingShoes1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Sports Shoes</p>
+                            <p>Means Shoes</p>
+                            <p>3512</p>
+                            <button onclick="addToCart(forOneFour)">Add To Cart</button>
+                        </div>
+                    </div>
+                    <div id="forOneFive">
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16513990/2022/1/26/d8f01fca-59e2-4f82-8214-9cd61d373be41643184909272-Roadster-Men-White-Sneakers-6661643184908868-1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Kings</p>
+                            <p>Means Shoes</p>
+                            <p>5795</p>
+                            <button onclick="addToCart(forOneFive)">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20735876/2022/11/14/04c496d9-bf57-408c-bc4c-edd2ff4236381668395885211SportsShoes1.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19779910/2022/9/5/82555a10-c878-40db-aaa5-c863aff6abc21662367172797ProvogueMenWhiteColourblockedSneakers1.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14359590/2021/8/5/0f9d6557-d2c8-4e79-89bc-5b971b0aabcb1628159600111-HIGHLANDER-Men-White-Woven-Design-Athleisure-Sneakers-654162-6.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16920772/2022/1/26/b8a41f9b-02df-4202-af71-e03488a194121643184578709INVICTUSMenTanFauxLeatherFormalMoccasin1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19469184/2022/8/11/abe72eb0-3153-44ca-9d14-ec22927b98681660196351198HARVARDMensBlueCanvasMonotoneCasualSneakers1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17425548/2022/9/8/77ef6940-a1a1-40af-bf58-e92bc349b8d11662633779415RoadsterMenBlackSneakers1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19217384/2022/7/22/5d586145-5e6a-44d6-9292-a662173051dc1658470302498SportsShoes1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17097806/2022/2/10/aa9f5212-f2eb-4531-b836-1df0c3d3fe2d1644484313283MastHarbourMenWhiteStripedSneakers1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20153028/2022/9/24/04a91674-aef0-44e8-92d0-a6554ab61c211664010042023RedTapeMenWhiteMeshWalkingNon-MarkingShoes1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16513990/2022/1/26/d8f01fca-59e2-4f82-8214-9cd61d373be41643184909272-Roadster-Men-White-Sneakers-6661643184908868-1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20735876/2022/11/14/04c496d9-bf57-408c-bc4c-edd2ff4236381668395885211SportsShoes1.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19779910/2022/9/5/82555a10-c878-40db-aaa5-c863aff6abc21662367172797ProvogueMenWhiteColourblockedSneakers1.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14359590/2021/8/5/0f9d6557-d2c8-4e79-89bc-5b971b0aabcb1628159600111-HIGHLANDER-Men-White-Woven-Design-Athleisure-Sneakers-654162-6.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16920772/2022/1/26/b8a41f9b-02df-4202-af71-e03488a194121643184578709INVICTUSMenTanFauxLeatherFormalMoccasin1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19469184/2022/8/11/abe72eb0-3153-44ca-9d14-ec22927b98681660196351198HARVARDMensBlueCanvasMonotoneCasualSneakers1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17425548/2022/9/8/77ef6940-a1a1-40af-bf58-e92bc349b8d11662633779415RoadsterMenBlackSneakers1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19217384/2022/7/22/5d586145-5e6a-44d6-9292-a662173051dc1658470302498SportsShoes1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17097806/2022/2/10/aa9f5212-f2eb-4531-b836-1df0c3d3fe2d1644484313283MastHarbourMenWhiteStripedSneakers1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20153028/2022/9/24/04a91674-aef0-44e8-92d0-a6554ab61c211664010042023RedTapeMenWhiteMeshWalkingNon-MarkingShoes1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16513990/2022/1/26/d8f01fca-59e2-4f82-8214-9cd61d373be41643184909272-Roadster-Men-White-Sneakers-6661643184908868-1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20735876/2022/11/14/04c496d9-bf57-408c-bc4c-edd2ff4236381668395885211SportsShoes1.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19779910/2022/9/5/82555a10-c878-40db-aaa5-c863aff6abc21662367172797ProvogueMenWhiteColourblockedSneakers1.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14359590/2021/8/5/0f9d6557-d2c8-4e79-89bc-5b971b0aabcb1628159600111-HIGHLANDER-Men-White-Woven-Design-Athleisure-Sneakers-654162-6.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16920772/2022/1/26/b8a41f9b-02df-4202-af71-e03488a194121643184578709INVICTUSMenTanFauxLeatherFormalMoccasin1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19469184/2022/8/11/abe72eb0-3153-44ca-9d14-ec22927b98681660196351198HARVARDMensBlueCanvasMonotoneCasualSneakers1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17425548/2022/9/8/77ef6940-a1a1-40af-bf58-e92bc349b8d11662633779415RoadsterMenBlackSneakers1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19217384/2022/7/22/5d586145-5e6a-44d6-9292-a662173051dc1658470302498SportsShoes1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/17097806/2022/2/10/aa9f5212-f2eb-4531-b836-1df0c3d3fe2d1644484313283MastHarbourMenWhiteStripedSneakers1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20153028/2022/9/24/04a91674-aef0-44e8-92d0-a6554ab61c211664010042023RedTapeMenWhiteMeshWalkingNon-MarkingShoes1.jpg"
+                            , alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16513990/2022/1/26/d8f01fca-59e2-4f82-8214-9cd61d373be41643184909272-Roadster-Men-White-Sneakers-6661643184908868-1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20735876/2022/11/14/04c496d9-bf57-408c-bc4c-edd2ff4236381668395885211SportsShoes1.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19779910/2022/9/5/82555a10-c878-40db-aaa5-c863aff6abc21662367172797ProvogueMenWhiteColourblockedSneakers1.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14359590/2021/8/5/0f9d6557-d2c8-4e79-89bc-5b971b0aabcb1628159600111-HIGHLANDER-Men-White-Woven-Design-Athleisure-Sneakers-654162-6.jpg"
+                            alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16920772/2022/1/26/b8a41f9b-02df-4202-af71-e03488a194121643184578709INVICTUSMenTanFauxLeatherFormalMoccasin1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19469184/2022/8/11/abe72eb0-3153-44ca-9d14-ec22927b98681660196351198HARVARDMensBlueCanvasMonotoneCasualSneakers1.jpg"
+                            ,alt="shoes" />
+                        <div>
+                            <p>Road Stasr</p>
+                            <p>Means Shoes</p>
+                            <p>Rs. 872Rs. 3795</p>
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./server.js"></script>
+</body>
+
+</html>
