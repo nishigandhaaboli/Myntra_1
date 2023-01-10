@@ -43,7 +43,7 @@ function login() {
         if (emailFromLogin == parseData.emailOfUser && passwordFromLogin == parseData.passwordOfUser) {
             localStorage.setItem("isUserLoggedIn", "true");
             alert("login Successfull");
-            window.location.href = "./Home.html";
+            window.location.href = "./index.html";
         } else {
             alert("Please fill in the correct creadentials.....");
         }
